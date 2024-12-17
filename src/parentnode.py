@@ -15,10 +15,10 @@ class ParentNode(HTMLNode):
         else:
             child_content = ''
             for child in self.children:
-                child.to_html()
+                child_content += child.to_html()
             return f"<{self.tag}{self.props_to_html()}>{child_content}</{self.tag}>"
 
-        def __repr__(self):
+    def __repr__(self):
         print(self.tag)
         print(self.value)
         print(self.children)
